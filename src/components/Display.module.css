@@ -1,0 +1,46 @@
+.descriptionStyle {
+    text-align:center; 
+    margin-top:20%; 
+    margin-bottom:40px;
+}
+
+.actionParagraph {
+    margin:50px; 
+    font-family: 'Libre Baskerville', serif; 
+    font-weight:bolder; 
+    font-size:24px; 
+    color:white;
+}
+
+.urlInputRow {
+    background-color:#d9d9d9; 
+    height:50vh;
+}
+
+.inputColumn {
+    margin:10px;
+}
+
+.formStyle {
+    margin-top:3%; 
+    width:100%;
+}
+
+.inputFieldStyles {
+    width:75%; 
+    margin-left: 10%; 
+    margin-bottom: 2%; 
+    margin-top: 1%;
+    font-size:20px;
+}
+
+.submitFieldStyles {
+    width:25%; 
+    margin-left: 35%; 
+    font-family: 'Lobster', cursive; 
+    font-size:20px;
+}
+
+.inputLabel {
+    margin-left: 10%; 
+}
