@@ -80,7 +80,7 @@ class UrlDetails extends React.Component {
                           <span className="input-group-text" id="inputGroup-sizing-default">Shortcode</span>
                       </div>
                       <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" 
-                      value = {this.state.url_details} />
+                      value = {this.state.short_code} />
                   </div>
 
                   <div className="input-group mb-3">
