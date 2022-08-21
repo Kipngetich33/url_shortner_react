@@ -1,0 +1,21 @@
+.urlDetailsTitle {
+    text-align:center; 
+    margin-top:5%; 
+    margin-bottom:40px;
+}
+
+.titleStyle  {
+    margin:10px; 
+    font-family: 'Libre Baskerville', serif; 
+    font-weight:bolder; font-size:27px; 
+    color:white;
+}
+
+.headerRow {
+    background-color:#A4A8A8;
+}
+
+.detailsRow {
+    padding-top:20px;
+    height:70vh;
+}

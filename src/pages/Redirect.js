@@ -5,11 +5,10 @@ import axios from 'axios';
 // import styles
 import styles from "./commonStyles.module.css"
 
-const getLongUrl = (slug) => {
-    const backend_base_url = 'http://127.0.0.1:3000'
-    const frontend_base_url = 'http://127.0.0.1:3001'
-    const show_api = "api/v1/urls"
-    const complete_url = `${backend_base_url}/${show_api}/${slug}`
+const getLongUrl = (slug,baseUrls) => {
+
+    const { backend_base_url, frontend_base_url, url_apis_path } = baseUrls
+    const complete_url = `${backend_base_url}/${url_apis_path}/${slug}`
     axios.get(complete_url)
       .then(res => {
         console.log("response",res.data)
@@ -28,10 +27,10 @@ class Redirect extends React.Component {
         // get the slug i.e shortcode
         const  slug  = this.props.match.params[0]
         // now check for url for shortcode from backend
-        const longUrl = getLongUrl(slug)
+        const longUrl = getLongUrl(slug,this.props.baseUrls)
         return (
             <div className={styles.body}>
-                ...Redirecting
+                Loading ...
             </div>
         )
     }

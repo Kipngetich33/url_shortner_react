@@ -20,31 +20,23 @@ class Display extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state.url);
-        // check if url is already in database
-        const backend_base_url = 'http://127.0.0.1:3000'
-        const frontend_base_url = 'http://127.0.0.1:3001'
-        const url_api = "api/v1/urls"
-        const complete_url = `${backend_base_url}/${url_api}`
+        const { backend_base_url, frontend_base_url, url_apis_path } = this.props.baseUrls
+        const complete_url = `${backend_base_url}/${url_apis_path}`
         axios.post(complete_url,
             {
-                http_url: "https://medium.com/swlh/how-to-build-an-api-with-ruby-on-rails-28e27d47455a10",
-                short_code: "xyz9"
+                http_url: this.state.url,
             }
         ).then(res => {
             console.log("response",res.data)
             // now handles response here
-            window.location.href = `${frontend_base_url}/UrlDetails`
-            // if(res.data.status){
-            //     window.location.href = res.data.url
-            // }else{
-            //     window.location.href = `${frontend_base_url}/Error`
-            // }
+            window.location.href = `${frontend_base_url}/UrlDetails/${res.data.short_code}`
         })
 
     };
 
     // render the root div
     render() {
+        
         return (
             <div>
                 <div className="row body">

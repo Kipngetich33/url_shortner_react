@@ -16,28 +16,35 @@ import styles from "./Base.module.css"
 
 class Base extends React.Component {
     // render the root div
+    state = {
+        baseUrls:{
+            backend_base_url:'http://127.0.0.1:3000',
+            frontend_base_url:'http://127.0.0.1:3001',
+            url_apis_path:"api/v1/urls"
+        }
+    }
     render() {
         return (
           <div className={styles.body}>
-            <Header/>
+            <Header baseUrls = {this.state.baseUrls}/>
             <Switch>
                 <Route exact path="/">
-                    <Main />
+                    <Main baseUrls = {this.state.baseUrls} />
                 </Route>
                 <Route path="/urlDetails/:slug" >
-                    <UrlDetails/>
+                    <UrlDetails baseUrls = {this.state.baseUrls}/>
                 </Route>
                 <Route path="/urlList">
-                <UrlList/>
+                    <UrlList baseUrls = {this.state.baseUrls}/>
                 </Route>
                 <Route path="/Error">
-                    <Error />
+                    <Error baseUrls = {this.state.baseUrls}/>
                 </Route>
                 <Route path="/*" >
-                    <Redirect currentPath = {this.state} />
+                    <Redirect currentPath = {this.state} baseUrls = {this.state.baseUrls} />
                 </Route>
             </Switch> 
-            <Footer/>
+            <Footer baseUrls = {this.state.baseUrls}/>
           </div>
         )
     }

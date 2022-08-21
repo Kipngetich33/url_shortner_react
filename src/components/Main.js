@@ -38,7 +38,7 @@ class Main extends React.Component {
     render() {
         return (
           <div className={"row" + styles.body}>
-            <Display/>
+            <Display baseUrls = {this.props.baseUrls}/>
           </div>
         )
     }

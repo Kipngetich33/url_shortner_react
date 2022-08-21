@@ -25,7 +25,7 @@ const Header = () => {
             <div className="col-lg-3 col-md-3 col-sm-3" style={{padding:"20px"}}>
                 <h6 style={{color:"white",}}>
                     <NavLink to="/" activeClassName="active-link" exact>Home | </NavLink>
-                    <NavLink to="/UrlDetails" activeClassName="active-link" >UrlDetails | </NavLink>
+                    {/* <NavLink to="/UrlDetails" activeClassName="active-link" >UrlDetails | </NavLink> */}
                     <NavLink to="/urlList" activeClassName="active-link">UrlList </NavLink>
                 </h6>
             </div>
