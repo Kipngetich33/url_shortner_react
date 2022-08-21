@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Link, useRouteMatch } from "react-router-dom"
 
 // import child components
 import Header from "./Header.js"
@@ -8,6 +8,8 @@ import Footer from "./Footer"
 import UrlDetails from "../pages/UrlDetails.js";
 import Error from "../pages/Error.js"
 import UrlList from "../pages/UrlList.js"
+import Redirect from "../pages/Redirect.js"
+
 // import styles
 import styles from "./Base.module.css"
 
@@ -22,14 +24,17 @@ class Base extends React.Component {
                 <Route exact path="/">
                     <Main />
                 </Route>
-                <Route path="/urlDetails">
-                <UrlDetails />
+                <Route path="/urlDetails" >
+                    <UrlDetails/>
                 </Route>
                 <Route path="/urlList">
                 <UrlList/>
                 </Route>
-                <Route path="*">
-                <Error />
+                <Route path="/Error">
+                    <Error />
+                </Route>
+                <Route path="/*" >
+                    <Redirect currentPath = {this.state} />
                 </Route>
             </Switch> 
             <Footer/>
