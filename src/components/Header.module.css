@@ -18,3 +18,11 @@
     background-color:#212529;
 }
 
+a{
+    color:grey;
+    text-decoration: none;
+}
+a:hover{
+    color: gainsboro;
+}
+

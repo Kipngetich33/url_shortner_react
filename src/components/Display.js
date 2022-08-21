@@ -15,6 +15,11 @@ class Display extends React.Component {
         })
     }
 
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log(this.state.url);
+    };
+
     // render the root div
     render() {
         return (
@@ -33,14 +38,17 @@ class Display extends React.Component {
                 <div className={"row "+styles.urlInputRow}  >
                     <div className="col-md-3"></div>
                     <div className={"col-md-6 "+styles.inputColumn}>
-                        <form method="post" enctype="multipart/form-data" className={styles.formStyle}>
+                        <form className={styles.formStyle} onSubmit={this.handleSubmit}>
                             <label className={styles.inputLabel}>Enter Url</label><br/>
                             <input 
                                 className = {styles.inputFieldStyles}name="next" 
-                                value=""
+                                value={this.state.url}
                                 placeholder="Enter url"
+                                onChange={this.onChange}
                             />
-                            <input type="submit" className={"btn btn-primary btn-sm "+styles.submitFieldStyles} value="Lets Go!" />
+                            <button className={"btn btn-primary btn-sm "+styles.submitFieldStyles}>
+                                Lets Go!
+                            </button>
                             
                         </form>
                         <div className="col-md-3"></div>

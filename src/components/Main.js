@@ -1,8 +1,13 @@
 import React, { Component } from "react"
+import { Route, Switch } from "react-router-dom"
+
 // import child components
 import Header from "./Header.js"
 import Display from "./Display.js";
 import Footer from "./Footer"
+import UrlDetails from "../pages/UrlDetails.js";
+import Error from "../pages/Error.js"
+import UrlList from "../pages/UrlList.js"
 // import styles
 import styles from "./Main.module.css"
 
@@ -32,13 +37,9 @@ class Main extends React.Component {
     // render the root div
     render() {
         return (
-            <div className={"row"+" "+styles.body}>
-                <Header/>
-                <hr/>
-                <Display/>
-                <hr/>
-                <Footer/>
-            </div>
+          <div className={"row" + styles.body}>
+            <Display/>
+          </div>
         )
     }
 }
