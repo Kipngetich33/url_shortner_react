@@ -27,7 +27,6 @@ class Redirect extends React.Component {
     render() {
         // get the slug i.e shortcode
         const  slug  = this.props.match.params[0]
-        console.log("slug",slug)
         // now check for url for shortcode from backend
         const longUrl = getLongUrl(slug)
         return (
@@ -37,8 +36,6 @@ class Redirect extends React.Component {
         )
     }
 }
-
-
 
 // now export the created Component
 export default withRouter(Redirect)

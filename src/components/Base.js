@@ -24,7 +24,7 @@ class Base extends React.Component {
                 <Route exact path="/">
                     <Main />
                 </Route>
-                <Route path="/urlDetails" >
+                <Route path="/urlDetails/:slug" >
                     <UrlDetails/>
                 </Route>
                 <Route path="/urlList">
